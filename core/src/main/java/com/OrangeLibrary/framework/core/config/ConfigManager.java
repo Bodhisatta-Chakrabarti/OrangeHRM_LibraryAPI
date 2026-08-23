@@ -98,4 +98,15 @@ public class ConfigManager {
         return properties;
     }
 
+    public static String getSecret(String key)
+    {
+        String value=System.getenv(key);
+        if (value==null || value.trim().isEmpty())
+        {
+            throw new RuntimeException("Environment variable " + key + " is not set. \" +\n" +
+                    "            \"Required secrets must be set as environment variables before running tests.");
+        }
+        return value;
+    }
+
 }

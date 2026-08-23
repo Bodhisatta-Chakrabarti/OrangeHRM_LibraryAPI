@@ -12,6 +12,7 @@ public class SkeletonUITest {
         Assert.assertTrue(true);
 //        System.out.println("Base URL: " + ConfigManager.getProperty("ui", "base.url"));
 //        System.out.println("Browser: " + ConfigManager.getProperty("ui", "browser"));
+        //System.out.println("Username loaded: " + ConfigManager.getSecret("ADMIN_USERNAME"));
     }
 
 }

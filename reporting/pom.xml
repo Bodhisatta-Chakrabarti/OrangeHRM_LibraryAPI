@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.bodhisatta.hybridautomation</groupId>
+        <artifactId>OrangeHRM_LibraryAPI</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>reporting</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Reporting Module</name>
+
+<!--    <properties>-->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--    </properties>-->
+
+    <dependencies>
+
+        <!-- Reporting library -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+        </dependency>
+
+        <!-- TestNG needed because report listeners implement
+             ITestListener / ISuiteListener interfaces -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+
+        <!-- core dependency: report listeners hook into driver events
+             (e.g., capturing screenshots on failure needs WebDriver access) -->
+        <dependency>
+            <groupId>com.bodhisatta.hybridautomation</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+
+        <!-- common-utils dependency: reporting may use shared constants/POJOs
+             (e.g., environment name, test metadata models) -->
+        <dependency>
+            <groupId>com.bodhisatta.hybridautomation</groupId>
+            <artifactId>common-utils</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

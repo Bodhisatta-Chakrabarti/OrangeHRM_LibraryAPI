@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="UI Test Suite">
+    <test name="UI Skeleton Test">
+        <classes>
+            <class name="com.OrangeLibrary.tests.ui.tests.SkeletonUITest"></class>
+        </classes>
+    </test>
+</suite>

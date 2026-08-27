@@ -2,6 +2,7 @@ package com.OrangeLibrary.tests.ui.tests;
 
 import com.OrangeLibrary.framework.core.config.ConfigManager;
 import com.OrangeLibrary.framework.core.driver.WebDriverFactory;
+import com.OrangeLibrary.framework.core.utils.ScreenshotUtils;
 import com.OrangeLibrary.framework.core.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,6 +44,7 @@ public class SkeletonUITest {
     @AfterMethod
     public void tearDown()
     {
+        ScreenshotUtils.capture("skeletonPlaceholderTest");
         WebDriverFactory.quitDriver();
     }
 

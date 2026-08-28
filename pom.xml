@@ -33,6 +33,7 @@
         <extentreports.version>5.1.2</extentreports.version>
         <json-schema-validator.version>6.0.1</json-schema-validator.version>
         <assertj.version>3.27.7</assertj.version>
+        <log4j-slf4j2.version>2.26.1</log4j-slf4j2.version>
 
         <!-- Plugin versions -->
         <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
@@ -130,6 +131,12 @@
                 <groupId>com.bodhisatta.hybridautomation</groupId>
                 <artifactId>reporting</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j2-impl</artifactId>
+                <version>${log4j-slf4j2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,0 +1,8 @@
+2026-08-28 13:19:22.682 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'ui', environment 'qa', path 'config/qa.properties'
+2026-08-28 13:19:22.685 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 6 properties for module context 'ui'
+2026-08-28 13:19:22.685 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - Browser resolved from config file: chrome
+2026-08-28 13:19:22.686 [main] INFO  com.OrangeLibrary.framework.core.driver.WebDriverFactory - Initializing WebDriver - browser: CHROME, headless: false
+2026-08-28 13:19:25.892 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver initialized and stored for thread: main
+2026-08-28 13:19:28.776 [main] DEBUG com.OrangeLibrary.framework.core.utils.WaitUtils - Waiting for visibility of element: By.name: username (timeout: 15s)
+2026-08-28 13:19:30.010 [main] INFO  com.OrangeLibrary.framework.core.utils.ScreenshotUtils - Screenshot captured: D:\Projects\OrangeHRM_LibraryAPI\OrangeHRM_LibraryAPI\ui-tests\test-output\screenshots\skeletonPlaceholderTest_20260828_131930.png
+2026-08-28 13:19:30.235 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver quit and removed for thread: main

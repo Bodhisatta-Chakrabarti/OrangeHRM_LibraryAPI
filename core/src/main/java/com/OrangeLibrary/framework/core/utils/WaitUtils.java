@@ -2,7 +2,10 @@ package com.OrangeLibrary.framework.core.utils;
 
 import com.OrangeLibrary.framework.core.config.ConfigManager;
 import com.OrangeLibrary.framework.core.driver.WebDriverFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,6 +27,8 @@ import java.time.Duration;
  */
 public class WaitUtils {
 
+    private static final Logger logger= LogManager.getLogger(WaitUtils.class);
+
     private static final String MODULE_CONTEXT="ui";
 
     private WaitUtils()
@@ -38,7 +43,14 @@ public class WaitUtils {
 
     public static WebElement waitForVisibility(By locator, int timeoutSeconds)
     {
-        return buildWait(timeoutSeconds).until(ExpectedConditions.visibilityOfElementLocated(locator));
+        logger.debug("Waiting for visibility of element: {} (timeout: {}s)", locator, timeoutSeconds);
+        try{
+            return buildWait(timeoutSeconds).until(ExpectedConditions.visibilityOfElementLocated(locator));
+        }catch (TimeoutException e)
+        {
+            logger.warn("Timed out waiting for visibility of element: {} after {}s", locator, timeoutSeconds);
+            throw e;
+        }
     }
 
     public static WebElement waitForClickability(By locator)
@@ -48,7 +60,14 @@ public class WaitUtils {
 
     public static WebElement waitForClickability(By locator, int timeoutSeconds)
     {
-        return buildWait(timeoutSeconds).until(ExpectedConditions.elementToBeClickable(locator));
+        logger.debug("Waiting for clickability of element: {} (timeout: {}s)", locator, timeoutSeconds);
+        try{
+            return buildWait(timeoutSeconds).until(ExpectedConditions.elementToBeClickable(locator));
+        }catch (TimeoutException e)
+        {
+            logger.warn("Timed out waiting for clickability of element: {} after {}s", locator, timeoutSeconds);
+            throw e;
+        }
     }
 
     public static WebElement waitForPresence(By locator)
@@ -58,7 +77,14 @@ public class WaitUtils {
 
     public static WebElement waitForPresence(By locator, int timeoutSeconds)
     {
-        return buildWait(timeoutSeconds).until(ExpectedConditions.presenceOfElementLocated(locator));
+        logger.debug("Waiting for presence of element: {} (timeout: {}s)", locator, timeoutSeconds);
+        try{
+            return buildWait(timeoutSeconds).until(ExpectedConditions.presenceOfElementLocated(locator));
+        }catch (TimeoutException e)
+        {
+            logger.warn("Timed out waiting for presence of element: {} after {}s", locator, timeoutSeconds);
+            throw e;
+        }
     }
 
     public static boolean waitForInvisibility(By locator)
@@ -68,7 +94,14 @@ public class WaitUtils {
 
     public static boolean waitForInvisibility(By locator, int timeoutSeconds)
     {
-        return buildWait(timeoutSeconds).until(ExpectedConditions.invisibilityOfElementLocated(locator));
+        logger.debug("Waiting for invisibility of element: {} (timeout: {}s)", locator, timeoutSeconds);
+        try{
+            return buildWait(timeoutSeconds).until(ExpectedConditions.invisibilityOfElementLocated(locator));
+        }catch (TimeoutException e)
+        {
+            logger.warn("Timed out waiting for invisibility of element: {} after {}s", locator, timeoutSeconds);
+            throw e;
+        }
     }
 
     public static boolean waitForTextToBePresent(By locator, String text)
@@ -78,7 +111,14 @@ public class WaitUtils {
 
     public static boolean waitForTextToBePresent(By locator, String text, int timeoutSeconds)
     {
-        return buildWait(timeoutSeconds).until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+        logger.debug("Waiting for text '{}' in element: {} (timeout: {}s)", text, locator, timeoutSeconds);
+        try{
+            return buildWait(timeoutSeconds).until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+        }catch (TimeoutException e)
+        {
+            logger.warn("Timed out waiting for text '{}' in element: {} (timeout: {}s)", text, locator, timeoutSeconds);
+            throw e;
+        }
     }
 
     /**

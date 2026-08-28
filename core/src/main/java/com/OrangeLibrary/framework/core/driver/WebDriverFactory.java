@@ -3,6 +3,8 @@ package com.OrangeLibrary.framework.core.driver;
 import com.OrangeLibrary.framework.common.constants.BrowserType;
 import com.OrangeLibrary.framework.core.config.ConfigManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -25,6 +27,8 @@ import java.time.Duration;
 public class WebDriverFactory {
 
     private static final ThreadLocal<WebDriver> driverThreadLocal=new ThreadLocal<>();
+
+    private static final Logger logger= LogManager.getLogger(WebDriverFactory.class);
 
     private WebDriverFactory()
     {
@@ -51,6 +55,7 @@ public class WebDriverFactory {
         int pageLoadTimeoutSeconds=Integer.parseInt(ConfigManager.getProperty(moduleContext, "page.load.timeout.seconds", "30"));
 
         WebDriver driver=null;
+        logger.info("Initializing WebDriver - browser: {}, headless: {}", browserType, headless);
 
         try{
             driver=createDriver(browserType, headless);
@@ -59,6 +64,7 @@ public class WebDriverFactory {
             driver.manage().window().maximize();
 
             driverThreadLocal.set(driver);
+            logger.debug("WebDriver initialized and stored for thread: {}", Thread.currentThread().getName());
         }catch (RuntimeException e)
         {
             if (driver!=null)
@@ -79,6 +85,7 @@ public class WebDriverFactory {
         WebDriver driver=driverThreadLocal.get();
         if (driver==null)
         {
+            logger.error("getDriver() called before initDriver() on thread: {}", Thread.currentThread().getName());
             throw new IllegalStateException("WebDriver has not been initialized for this thread. Call initDriver() first");
         }
         return driver;
@@ -95,6 +102,7 @@ public class WebDriverFactory {
             if (driver!=null)
             {
                 driver.quit();
+                logger.debug("WebDriver quit and removed for thread: {}", Thread.currentThread().getName());
             }
         }finally {
             driverThreadLocal.remove();
@@ -132,6 +140,7 @@ public class WebDriverFactory {
                 }
                 return new EdgeDriver(edgeOptions);
             default :
+                logger.error("Unsupported browser type requested: {}", browserType);
                 throw new IllegalArgumentException("Unsupported browser type: " + browserType);
         }
     }
@@ -143,10 +152,12 @@ public class WebDriverFactory {
         String systemPropertyBrowser=System.getProperty("browser");
         if (systemPropertyBrowser!=null && !systemPropertyBrowser.trim().isEmpty())
         {
+            logger.debug("Browser resolved from system property: {}", systemPropertyBrowser);
             return BrowserType.fromString(systemPropertyBrowser);
         }
 
         String configBrowser= ConfigManager.getProperty(moduleContext, "browser");
+        logger.debug("Browser resolved from config file: {}", configBrowser);
         return BrowserType.fromString(configBrowser);
     }
 

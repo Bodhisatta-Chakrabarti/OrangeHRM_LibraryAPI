@@ -1,6 +1,8 @@
 package com.OrangeLibrary.framework.core.utils;
 
 import com.OrangeLibrary.framework.core.driver.WebDriverFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +28,8 @@ import java.time.format.DateTimeFormatter;
  */
 public class ScreenshotUtils {
 
+    private static final Logger logger= LogManager.getLogger(ScreenshotUtils.class);
+
     private static final String SCREENSHOT_DIR="test-output/screenshots";
     private static final DateTimeFormatter TIMESTAMP_FORMAT=DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
 
@@ -47,7 +51,7 @@ public class ScreenshotUtils {
 
             if (!(driver instanceof TakesScreenshot))
             {
-                System.err.println("WARNING: Current driver does not support screenshot capture");
+                logger.warn("Current driver does not support screenshot capture");
                 return null;
             }
 
@@ -56,6 +60,7 @@ public class ScreenshotUtils {
             if (!Files.exists(outputDir))
             {
                 Files.createDirectories(outputDir);
+                logger.debug("Created screenshot output directory: {}", outputDir.toAbsolutePath());
             }
 
             String safeTestName=(testName==null || testName.trim().isEmpty())?"unnamed_test":testName.trim().replaceAll("[^a-zA-Z0-9_-]", "-");
@@ -67,22 +72,22 @@ public class ScreenshotUtils {
             Files.copy(sourceFile.toPath(), destinationPath);
 
             String absolutePath=destinationPath.toAbsolutePath().toString();
-            System.out.println("Screenshot captured: " + absolutePath);
+            logger.info("Screenshot captured: {}", absolutePath);
             return absolutePath;
 
         }
         catch (IllegalStateException e) {
             // Thrown by WebDriverFactory.getDriver() if driver isn't initialized for this thread
-            System.err.println("WARNING: Could not capture screenshot - driver not initialized: " + e.getMessage());
+            logger.warn("Could not capture screenshot - driver not initialized: {}", e.getMessage());
             return null;
         }
         catch (IOException e) {
-            System.err.println("WARNING: Failed to save screenshot to disk: " + e.getMessage());
+            logger.warn("Failed to save screenshot to disk: {}", e.getMessage());
             return null;
         }
         catch (Exception e) {
             // Catch-all so a screenshot failure never masks or compounds the original test failure
-            System.err.println("WARNING: Unexpected error while capturing screenshot: " + e.getMessage());
+            logger.warn("Unexpected error while capturing screenshot: {}", e.getMessage());
             return null;
         }
     }

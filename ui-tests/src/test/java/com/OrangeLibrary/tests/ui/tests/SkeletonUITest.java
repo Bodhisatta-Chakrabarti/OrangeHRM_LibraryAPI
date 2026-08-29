@@ -20,7 +20,7 @@ public class SkeletonUITest {
         WebDriverFactory.initDriver("ui");
     }
 
-    @Test
+    @Test(retryAnalyzer = com.OrangeLibrary.framework.core.listeners.RetryAnalyzer.class)
     public void skeletonPlaceholderTest()
     {
         WebDriver driver=WebDriverFactory.getDriver();
@@ -33,6 +33,8 @@ public class SkeletonUITest {
 
         String pageTitle= driver.getTitle();
         System.out.println("Page Title: " + pageTitle);
+
+        //Assert.fail("Deliberate failure to validate retry logic");
         Assert.assertFalse(pageTitle.isEmpty(), "Page title should not be empty");
 
         //Assert.assertTrue(true);

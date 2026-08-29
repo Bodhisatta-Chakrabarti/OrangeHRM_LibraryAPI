@@ -1,8 +1,31 @@
-2026-08-28 13:19:22.682 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'ui', environment 'qa', path 'config/qa.properties'
-2026-08-28 13:19:22.685 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 6 properties for module context 'ui'
-2026-08-28 13:19:22.685 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - Browser resolved from config file: chrome
-2026-08-28 13:19:22.686 [main] INFO  com.OrangeLibrary.framework.core.driver.WebDriverFactory - Initializing WebDriver - browser: CHROME, headless: false
-2026-08-28 13:19:25.892 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver initialized and stored for thread: main
-2026-08-28 13:19:28.776 [main] DEBUG com.OrangeLibrary.framework.core.utils.WaitUtils - Waiting for visibility of element: By.name: username (timeout: 15s)
-2026-08-28 13:19:30.010 [main] INFO  com.OrangeLibrary.framework.core.utils.ScreenshotUtils - Screenshot captured: D:\Projects\OrangeHRM_LibraryAPI\OrangeHRM_LibraryAPI\ui-tests\test-output\screenshots\skeletonPlaceholderTest_20260828_131930.png
-2026-08-28 13:19:30.235 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver quit and removed for thread: main
+2026-08-29 11:57:54.725 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'ui', environment 'qa', path 'config/qa.properties'
+2026-08-29 11:57:54.739 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 6 properties for module context 'ui'
+2026-08-29 11:57:54.739 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - Browser resolved from config file: chrome
+2026-08-29 11:57:54.741 [main] INFO  com.OrangeLibrary.framework.core.driver.WebDriverFactory - Initializing WebDriver - browser: CHROME, headless: false
+2026-08-29 11:57:57.594 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.64 (resolved driver for Chrome 152)
+2026-08-29 11:57:57.638 [main] INFO  io.github.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/152.0.7977.64/win64/chromedriver-win64.zip
+2026-08-29 11:58:06.780 [main] INFO  io.github.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+2026-08-29 11:58:06.989 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\B Chakrabarti\.cache\selenium\chromedriver\win64\152.0.7977.64\chromedriver.exe
+2026-08-29 11:58:09.996 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver initialized and stored for thread: main
+2026-08-29 11:58:20.865 [main] DEBUG com.OrangeLibrary.framework.core.utils.WaitUtils - Waiting for visibility of element: By.name: username (timeout: 15s)
+2026-08-29 11:58:21.538 [main] WARN  com.OrangeLibrary.framework.core.listeners.RetryAnalyzer - Retrying test 'skeletonPlaceholderTest' - attempt 2 of 3 (after failure)
+2026-08-29 11:58:21.711 [main] INFO  com.OrangeLibrary.framework.core.utils.ScreenshotUtils - Screenshot captured: D:\Projects\OrangeHRM_LibraryAPI\OrangeHRM_LibraryAPI\ui-tests\test-output\screenshots\skeletonPlaceholderTest_20260829_115821.png
+2026-08-29 11:58:23.600 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver quit and removed for thread: main
+2026-08-29 11:58:23.602 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - Browser resolved from config file: chrome
+2026-08-29 11:58:23.602 [main] INFO  com.OrangeLibrary.framework.core.driver.WebDriverFactory - Initializing WebDriver - browser: CHROME, headless: false
+2026-08-29 11:58:23.613 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.64 (resolved driver for Chrome 152)
+2026-08-29 11:58:23.624 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\B Chakrabarti\.cache\selenium\chromedriver\win64\152.0.7977.64\chromedriver.exe
+2026-08-29 11:58:24.513 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver initialized and stored for thread: main
+2026-08-29 11:58:33.112 [main] DEBUG com.OrangeLibrary.framework.core.utils.WaitUtils - Waiting for visibility of element: By.name: username (timeout: 15s)
+2026-08-29 11:58:33.830 [main] WARN  com.OrangeLibrary.framework.core.listeners.RetryAnalyzer - Retrying test 'skeletonPlaceholderTest' - attempt 3 of 3 (after failure)
+2026-08-29 11:58:34.017 [main] INFO  com.OrangeLibrary.framework.core.utils.ScreenshotUtils - Screenshot captured: D:\Projects\OrangeHRM_LibraryAPI\OrangeHRM_LibraryAPI\ui-tests\test-output\screenshots\skeletonPlaceholderTest_20260829_115834.png
+2026-08-29 11:58:34.231 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver quit and removed for thread: main
+2026-08-29 11:58:34.232 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - Browser resolved from config file: chrome
+2026-08-29 11:58:34.233 [main] INFO  com.OrangeLibrary.framework.core.driver.WebDriverFactory - Initializing WebDriver - browser: CHROME, headless: false
+2026-08-29 11:58:34.243 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 152.0.7977.64 (resolved driver for Chrome 152)
+2026-08-29 11:58:34.254 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\B Chakrabarti\.cache\selenium\chromedriver\win64\152.0.7977.64\chromedriver.exe
+2026-08-29 11:58:35.324 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver initialized and stored for thread: main
+2026-08-29 11:58:46.316 [main] DEBUG com.OrangeLibrary.framework.core.utils.WaitUtils - Waiting for visibility of element: By.name: username (timeout: 15s)
+2026-08-29 11:58:48.598 [main] WARN  com.OrangeLibrary.framework.core.listeners.RetryAnalyzer - Test 'skeletonPlaceholderTest' failed after 3 total attempts. No further retries.
+2026-08-29 11:58:48.780 [main] INFO  com.OrangeLibrary.framework.core.utils.ScreenshotUtils - Screenshot captured: D:\Projects\OrangeHRM_LibraryAPI\OrangeHRM_LibraryAPI\ui-tests\test-output\screenshots\skeletonPlaceholderTest_20260829_115848.png
+2026-08-29 11:58:49.024 [main] DEBUG com.OrangeLibrary.framework.core.driver.WebDriverFactory - WebDriver quit and removed for thread: main

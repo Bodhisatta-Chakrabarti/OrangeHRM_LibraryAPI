@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -118,11 +119,19 @@ public class WebDriverFactory {
             case CHROME :
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions=new ChromeOptions();
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-extensions");
+                chromeOptions.addArguments("--disable-notifications");
+                chromeOptions.addArguments("--disable-popup-blocking");
                 if (headless)
                 {
                     chromeOptions.addArguments("--headless=new");
                 }
-                return new ChromeDriver(chromeOptions);
+                ChromeDriverService chromeService=new ChromeDriverService.Builder().withTimeout(Duration.ofSeconds(120)).build();
+                return new ChromeDriver(chromeService, chromeOptions);
             case FIREFOX :
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions=new FirefoxOptions();
@@ -134,6 +143,10 @@ public class WebDriverFactory {
             case EDGE :
                 WebDriverManager.edgedriver().setup();
                 EdgeOptions edgeOptions=new EdgeOptions();
+                edgeOptions.addArguments("--remote-allow-origins=*");
+                edgeOptions.addArguments("--disable-gpu");
+                edgeOptions.addArguments("--disable-dev-shm-usage");
+                edgeOptions.addArguments("--no-sandbox");
                 if (headless)
                 {
                     edgeOptions.addArguments("--headless=new");

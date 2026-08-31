@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Dependency versions-->
-        <selenium.version>4.47.0</selenium.version>
+        <selenium.version>4.48.0</selenium.version>
         <restassured.version>6.0.1</restassured.version>
         <testng.version>7.12.0</testng.version>
         <log4j.version>2.26.1</log4j.version>

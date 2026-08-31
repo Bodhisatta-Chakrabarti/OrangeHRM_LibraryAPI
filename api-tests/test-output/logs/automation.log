@@ -1,10 +1,16 @@
-2026-08-28 13:19:55.434 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'api', environment 'qa', path 'config/qa.properties'
-2026-08-28 13:19:55.437 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 4 properties for module context 'api'
-2026-08-28 13:19:55.437 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Executing GET request - endpoint: /api/v1/Books
-2026-08-28 13:19:55.437 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Building request spec - baseUri: https://fakerestapi.azurewebsites.net, timeOutSeconds: 20
-2026-08-28 13:19:57.957 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Response received - status: 200, time: 1478ms
-2026-08-28 13:30:49.525 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'api', environment 'qa', path 'config/qa.properties'
-2026-08-28 13:30:49.529 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 4 properties for module context 'api'
-2026-08-28 13:30:49.529 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Executing GET request - endpoint: /api/v1/Books
-2026-08-28 13:30:49.529 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Building request spec - baseUri: https://fakerestapi.azurewebsites.net, timeOutSeconds: 20
-2026-08-28 13:30:51.583 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Response received - status: 200, time: 1081ms
+2026-08-31 21:10:23.083 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'api', environment 'qa', path 'config/qa.properties'
+2026-08-31 21:10:23.096 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 4 properties for module context 'api'
+2026-08-31 21:10:23.097 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Executing GET request - endpoint: /api/v1/Books
+2026-08-31 21:10:23.097 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Building request spec - baseUri: https://fakerestapi.azurewebsites.net, timeOutSeconds: 20
+2026-08-31 21:10:26.378 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Response received - status: 200, time: 2140ms
+2026-08-31 21:11:39.257 [main] INFO  com.OrangeLibrary.framework.core.config.ConfigManager - Loading config for module context 'api', environment 'qa', path 'config/qa.properties'
+2026-08-31 21:11:39.259 [main] DEBUG com.OrangeLibrary.framework.core.config.ConfigManager - Successfully loaded 4 properties for module context 'api'
+2026-08-31 21:11:39.260 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Executing GET request - endpoint: /api/v1/Books
+2026-08-31 21:11:39.260 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Building request spec - baseUri: https://fakerestapi.azurewebsites.net, timeOutSeconds: 20
+2026-08-31 21:11:41.913 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Response received - status: 200, time: 1710ms
+2026-08-31 21:11:42.168 [main] DEBUG com.OrangeLibrary.framework.common.utils.JsonDataReader - Reading JSON test data from: testdata/createBookPayload.json
+2026-08-31 21:11:42.238 [main] DEBUG com.OrangeLibrary.framework.common.utils.JsonDataReader - Successfully deserialized JSON into: Book
+2026-08-31 21:11:42.242 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Executing POST request - endpoint: /api/v1/Books
+2026-08-31 21:11:42.243 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Building request spec - baseUri: https://fakerestapi.azurewebsites.net, timeOutSeconds: 20
+2026-08-31 21:11:42.244 [main] DEBUG com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Attaching request body of type: Book
+2026-08-31 21:11:43.323 [main] INFO  com.OrangeLibrary.framework.core.api.ApiRequestBuilder - Response received - status: 200, time: 934ms
